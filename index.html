@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priya | Ultra Advanced Glass Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+:root{--bg-main:#050814;--mix1:#22d3ee;--mix2:#a78bfa;--text-main:#e5e7eb;--text-muted:#9ca3af;--glass:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.28);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',sans-serif;background:radial-gradient(circle at top left,#0b2b3a,var(--bg-main)),radial-gradient(circle at bottom right,#1b0f3a,transparent);color:var(--text-main);overflow-x:hidden;}
+section{padding:100px 8%}
+h2{text-align:center;font-size:38px;margin-bottom:60px}
+ul{font-size: 15px;}
+
+/* NAVBAR */
+.navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:92%;max-width:1250px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:20px;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+.navbar ul{list-style:none;display:flex;gap:24px}
+.navbar a{color:var(--text-main);text-decoration:none;font-size:14px;position:relative}
+.navbar a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--mix1),var(--mix2));transition:.3s}
+.navbar a:hover::after{width:100%}
+.navbar a:hover {background: linear-gradient(90deg, #22d3ee, #a78bfa);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+
+/* HERO */
+.hero{min-height:100vh;
+ background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+ position:relative;display:flex;align-items:center;}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,20,0.92),rgba(5,8,20,0.6),rgba(5,8,20,0.2));}
+.hero-content{position:relative;z-index:2;max-width:620px;animation:slideIn 1.4s ease forwards;}
+.hero-content h1{font-size:60px;background:linear-gradient(90deg,var(--mix1),var(--mix2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-content p{margin:26px 0;color:var(--text-muted)}
+.hero-btns{display:flex;gap:18px}
+.btn{padding:12px 26px;border-radius:30px;background:linear-gradient(90deg,var(--mix1),var(--mix2));color:#000;font-weight:600;text-decoration:none;transition:.4s;position:relative;overflow:hidden;}
+.btn:hover{box-shadow:0 0 35px rgba(167,139,250,.6);transform:translateY(-2px)}
+
+/* ABOUT FIX */
+.about{display:grid;grid-template-columns: 320px 1fr; gap:60px;align-items:flex-start;}
+.about img{width:100%;height:auto;border-radius:28px;object-fit:cover;}
+.about-content{display:flex;flex-direction:column;gap:16px;}
+.about-content ul{list-style:none;padding:0;margin-top:10px;}
+.about-content li{margin-bottom:8px;}
+@keyframes slideIn{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:none}}
+
+/* Hamburger Icon */
+.hamburger {display:none;font-size:24px;color:#000;cursor:pointer;}
+
+/* Mobile Menu */
+@media(max-width:900px){
+  nav ul {display: none;flex-direction: column;gap: 0;background: rgba(179,136,255,0.95);position: absolute;top: 70px;right: 0;width: 200px;border-radius: 10px;overflow: hidden;}
+  nav ul li {margin: 0;border-bottom: 1px solid rgba(255,255,255,0.2);}
+  nav ul li a {padding: 12px 20px;display: block;color: #fff;}
+  .hamburger {display: block;}
+  nav ul.show {display: flex;}}
+
+/* Date-Time-Status display */
+.rt-date-time {position: absolute;top: 95px;right: 20px;text-align: right;font-family: "Poppins", "Segoe UI", Arial, sans-serif;color:black;z-index: 10;background: transparent;}
+.rt-date-time #current-date {font-size: 14px;font-weight: 300;}
+.rt-date-time #current-time {font-size: 14px;margin-top: 2px;font-weight: 300;}
+
+/* SKILLS PROGRESS BAR */
+.skill{margin-bottom:16px}
+.skill span{display:flex;justify-content:space-between;font-size:14px}
+.progress{height:8px;border-radius:10px;background:rgba(255,255,255,.12);overflow:hidden}
+.progress div{height:100%;background:linear-gradient(90deg,var(--mix1),var(--mix2))}
+
+/* Marquee Running Skills Icons */
+.skills-marquee {display: flex;align-items: center;height: 55px;overflow: hidden;}
+.skills-marquee img {width: 40px;height: auto;margin: 0 18px;vertical-align: middle;transition: transform 0.25s ease, filter 0.25s ease;filter: brightness(0.95);}
+.skills-marquee img:hover {transform: scale(1.2);filter: brightness(1.1);}
+
+/* NEON SANKEY TOP SECTION */
+#neon-flow-top{width:100%;background:transparent;padding:40px 0;overflow:hidden;}
+#neon-flow-top svg{width:100%;height:auto;}
+#neon-flow-top .label{fill:#a78bfa;font-size:14px;letter-spacing:1px;opacity:0.9;}
+#neon-flow-top .value{fill:#22d3ee;font-size:14px;font-weight:400;}
+#neon-flow-top .bar{filter:url(#glow);}
+#neon-flow-top .flow{fill:none;stroke-width:10;stroke-linecap:round;filter:url(#glow);opacity:0.9;}
+
+/* GLASS CARD */
+.gridS{display:grid;grid-template-columns:repeat(2,1fr);gap:36px;}
+.cardS{background:transparent;border-radius:26px;padding:26px;backdrop-filter:blur(12px);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.cardS::before{content:"";position:absolute;inset:-1px;background:linear-gradient(120deg,transparent,var(--mix1),var(--mix2),transparent);opacity:.25;z-index:-1}
+.cardS:hover {border: 1px solid #a78bfa;border-radius: 26px;transform: translateY(-5px);}
+.cardS:hover .skill span {color:#a78bfa;}
+.cardS:hover h3,.cardS:hover h4 {color:#a78bfa;}
+.small-icon img {width: 30px;height: 30px;vertical-align: middle;}
+
+/* GLASS CARD */
+.gridE{display:grid;grid-template-columns:repeat(2,1fr);gap:36px;}
+.cardE{background:transparent;border-radius:26px;padding:26px;backdrop-filter:blur(12px);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.cardE::before{content:"";position:absolute;inset:-1px;background:linear-gradient(120deg,transparent,var(--mix1),var(--mix2),transparent);opacity:.25;z-index:-1}
+.cardE:hover {border: 1px solid #a78bfa;border-radius: 26px;transform: translateY(-5px);}
+.cardE:hover .skill span {color:#a78bfa;}
+.cardE:hover h3,.cardE:hover h4 {color:#a78bfa;}
+.small-icon img {width: 30px;height: 30px;vertical-align: middle;}
+
+/* GLASS CARD */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+.card{background:transparent;border-radius:26px;padding:26px;border:1px solid var(--border);backdrop-filter:blur(12px);transition:.45s;position:relative;overflow:hidden;}
+.card::before{content:"";position:absolute;inset:-1px;background:linear-gradient(120deg,transparent,var(--mix1),var(--mix2),transparent);opacity:.25;z-index:-1}
+.card:hover{transform:translateY(-10px)}
+
+/* PROJECT / CERT */
+.card.project{position:relative;border-radius:20px;padding:18px;text-align:center;}
+.project img{width:100%;height:220px;object-fit:cover;border-radius:18px;display:block;}
+.cert-title{margin:14px 0 60px;font-size:16px;font-weight:600;color:#e5e7eb;}
+.card.project .btn:hover{color:#1b0f3a;transform: translateX(-50%) rotate(-5deg);transform-origin: center;}
+.card.project .btn{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);transition:transform 0.3s ease,color 0.3s ease;padding:10px 26px;border-radius:22px;background: linear-gradient(90deg, #22d3ee, #a78bfa);color:#000;font-weight:600;text-decoration:none;}
+.card{border:1px solid transparent;border-radius:20px;transition:border-color .3s ease;}
+.card:hover{border-color:#a78bfa;}
+.card:hover .cert-title{color:#a78bfa;}
+
+/* CONTACT */
+.contact-icons{display:flex;justify-content:center;gap:20px;font-size:30px;}
+.contact-icons a{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--mix1);text-decoration:none;transition:.4s;position:relative;overflow:hidden}
+.contact-icons a::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--mix1),var(--mix2));opacity:0;transition:.4s}
+.contact-icons a:hover::after{opacity:.25}
+.contact-icons a:hover{transform:translateY(-6px) rotate(-5deg);}
+.contact-icons a:hover{border:1px solid #a78bfa;color:#a78bfa;}
+
+/* FOOTER */
+.site-footer{background:#030712;padding:40px 80px 30px;color:#fff;}
+.footer-links strong{color:#fff;display:block;margin-bottom:14px;font-size:16px;}
+.footer-links a{display:block;width:max-content;margin:6px 0;color:#22d3ee;text-decoration:none;position:relative;transition:0.3s;}
+.footer-links a::after,
+.dev-link::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#fff;transition:0.4s;}
+.footer-links a:hover{color:#fff;}
+.footer-links a:hover::after,
+.dev-link:hover::after{width:100%;}
+.policy-links{margin-top:14px;}
+.footer-divider{height:1px;background:#22d3ee;margin:22px 0;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.dev-link{color:#22d3ee;text-decoration:none;position:relative;}
+.dev-link:hover{color:#fff;}
+
+.floating-dots span{position:fixed;width:6px;height:6px;background:#22d3ee;border-radius:50%;animation:float 10s linear infinite;opacity:.6;}
+.floating-dots span:nth-child(1){left:10%;animation-delay:0s;}
+.floating-dots span:nth-child(2){left:30%;animation-delay:2s;}
+.floating-dots span:nth-child(3){left:60%;animation-delay:4s;}
+.floating-dots span:nth-child(4){left:80%;animation-delay:6s;}
+@keyframes float{0%{bottom:-10px}100%{bottom:110%}}
+
+/*@keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.navbar ul{display:none}} */
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+<strong style="color: #22d3ee;">Priya</strong>
+ <ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Me</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certification">Certification</a></li>
+<li><a href="#contact">Contact Me</a></li>
+ </ul>
+</nav>
+
+<!-- Date-Time-Status display -->
+<div class="rt-date-time">
+  <div id="current-date"></div>
+  <div id="current-time"></div>
+</div>
+
+<div class="floating-dots">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div id="type-name" style="font-size:40px;color:var(--mix1)"></div>
+  <h1>Data Analytics & <br>Business Intelligence</h1>
+  <p id="type-skill"></p>
+  <div class="hero-btns">
+   <a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+   <a href="https://github.com/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="View My GitHub Projects" class="btn"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+ </div>
+</section>
+
+<!-- ABOUT ME -->
+<section id="about">
+ <h2 style="color:#a78bfa;"><span class="dynamic-text"></span></h2>
+  <div class="about">
+    <img src="https://pbs.twimg.com/media/FM8NxEJVIAE2lzX.jpg">
+    <div class="about-content">
+      <p>My resume reflects my learning journey in Data Analysis, and I continue to strengthen my data skills through hands-on practice and real-world projects. I am a passionate Data Analyst with practical experience in Excel, SQL, Power BI, Python, and automation, focusing on transforming raw data into actionable business insights and building effective reporting dashboards for data-driven decision-making.</p>
+      <p>Over time, I have worked on multiple analytics projects involving data cleaning, visualization, and predictive modeling. This portfolio highlights my skills, certifications, and real-world projects, allowing you to explore my work, understand my learning outcomes, analytical approach, and practical problem-solving abilities.</p>
+      <ul>
+        <li><i class="fas fa-graduation-cap"></i> Education: Master of Computer Applications</li>
+        <li><i class="fas fa-file-signature"></i> Learning Phase: Building Skills in Python</li>
+        <li><i class="fas fa-chart-line"></i> Domain: Business Intelligence, Data Analytics</li>
+        <li><i class="fas fa-database"></i> Data Tools: Excel, SQL, Power BI, Python</li>
+        <li><i class="fas fa-map-marker-alt"></i> City: Kolkata, India</li>
+        <li><i class="fas fa-language"></i> Languages: English, Hindi</li>
+        <li><i class="fas fa-puzzle-piece"></i> Interest: Experimenting with data & code</li>
+        <li><a href="mailto:rajeevtiwari8055@gmail.com?subject=Hi%20Rajeev&body=I%20visited%20your%20website%20and%20wanted%20to%20connect%20with%20you!" style="color: inherit; text-decoration: none;" onmouseover="this.style.color='#a78bfa'" onmouseout="this.style.color='inherit'"><i class="fas fa-envelope"></i> rajeevtiwari8055@gmail.com↗</a></li>
+      </ul>
+      <div class="hero-btns"><a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" class="btn"><i class="fas fa-address-card"></i> Download Resume</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 style="color:#22d3ee">Skills <i class="fas fa-layer-group"></i></h2>
+<div class="gridS">
+<div class="cardS">
+<div class="skill"><span>Excel <b>90%</b></span><div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill"><span>SQL <b>85%</b></span><div class="progress"><div style="width:85%"></div></div></div>
+<div class="skill"><span class="small-icon"><i class="fas fa-file-excel"></i><i class="fas fa-tachometer-alt"></i><i class="fas fa-database"></i></span></div>
+</div>
+<div class="cardS">
+<div class="skill"><span>Power BI <b>88%</b></span><div class="progress"><div style="width:88%"></div></div></div>
+<div class="skill"><span>Power Query <b>80%</b></span><div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill"><span class="small-icon"><i class="fas fa-chart-bar"></i><i class="fas fa-chart-pie"></i><i class="fas fa-filter"></i></span></div>
+</div>
+<div class="cardS">
+<div class="skill"><span>Python <b>82%</b></span><div class="progress"><div style="width:82%"></div></div></div>
+<div class="skill"><span>Automation <b>70%</b></span><div class="progress"><div style="width:70%"></div></div></div>
+<div class="skill"><span class="small-icon"><i class="fab fa-python"></i><i class="fas fa-robot"></i><i class="fas fa-cogs"></i></span></div>
+</div>
+<div class="cardS">
+<div class="skill"><span>Microsoft 365 <b>88%</b></span><div class="progress"><div style="width:88%"></div></div></div>
+<div class="skill"><span>Tableau <b>80%</b></span><div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill"><span class="small-icon"><i class="fab fa-microsoft"></i><i class="fas fa-chart-line"></i><i class="fas fa-chart-area"></i></span></div>
+</div>
+</div>
+</section>
+
+<!-- ===============================
+ NEON SANKEY FLOW (TOP)
+================================ -->
+<section id="neon-flow-top">
+  <marquee class="skills-marquee" behavior="scroll" direction="left" scrollamount="8">
+  <img src="images/Word.svg" alt="Word">
+  <img src="images/Access.svg" alt="Access">
+  <img src="images/MIS.svg" alt="MIS">
+  <img src="images/PowerPoint.svg" alt="PowerPoint">
+  <img src="images/PostgreSQL.svg" alt="PostgreSQL">
+  <img src="images/MySQL.svg" alt="MySQL">
+  <img src="images/Numpy.svg" alt="Numpy">
+  <img src="images/Pandas.svg" alt="Pandas">
+  <img src="images/Matplotlib.svg" alt="Metplotlib">
+  <img src="images/Seaborn.svg" alt="Seaborn">
+  <img src="images/HTML5.svg" alt="HTML5">
+  <img src="images/CSS.svg" alt="CSS">
+  <img src="images/Docker.svg" alt="Docker">
+  <img src="images/looker.svg" alt="Looker"> 
+  <img src="images/VBA.png" alt="VBA"> 
+  <img src="images/n8n.png" alt="n8n">
+  <img src="images/Git.svg" alt="Git">
+  <img src="images/GitHub.svg" alt="GitHub">
+  <img src="images/Canva.svg" alt="Canva">
+  <img src="images/Google Analytics.svg" alt="Google Analytics">
+  <img src="images/Google Sheets.svg" alt="Sheets">
+  <img src="images/Microsoft365.svg" alt="Microsoft365">
+  <img src="images/Azure.svg" alt="Azure">
+  <img src="images/OpenAI.svg" alt="OpenAI">
+  <img src="images/GeminiStar.svg" alt="GeminiStar">
+  <img src="images/Perplexity.svg" alt="Perplexity">
+  <img src="images/VS code.svg" alt="VSCode">
+  <img src="images/Copilot.svg" alt="Copilot">
+</marquee>
+
+<svg viewBox="0 0 1500 420" xmlns="http://www.w3.org/2000/svg">
+
+<!-- ===== DEFINITIONS ===== -->
+<defs>
+  <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#9d5cff"/>
+    <stop offset="50%" stop-color="#6fa8ff"/>
+    <stop offset="100%" stop-color="#3fffdc"/>
+  </linearGradient>
+
+  <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#3fffdc"/>
+    <stop offset="100%" stop-color="#ffd166"/>
+  </linearGradient>
+
+  <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#ffd166"/>
+    <stop offset="100%" stop-color="#ff5ce8"/>
+  </linearGradient>
+
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="5" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+
+<!-- FLOWS -->
+<g>
+  <path d="M110 220 C 380 150, 520 120, 750 120" stroke="url(#g1)" class="flow"/>
+  <path d="M110 220 C 380 220, 520 200, 750 200" stroke="url(#g1)" class="flow"/>
+  <path d="M110 220 C 380 290, 520 290, 750 280" stroke="url(#g1)" class="flow"/>
+
+  <path d="M760 120 C 980 150, 1150 170, 1350 160" stroke="url(#g2)" class="flow"/>
+  <path d="M760 200 C 980 220, 1150 250, 1350 250" stroke="url(#g3)" class="flow"/>
+  <path d="M760 280 C 980 260, 1150 210, 1350 190" stroke="url(#g2)" class="flow"/>
+</g>
+
+<!-- LEFT -->
+<g>
+  <rect x="90" y="190" width="10" height="60" rx="5" fill="#b26cff" class="bar"/>
+  <text x="115" y="190" class="label">Skill Foundation</text>
+  <text x="115" y="212" class="value">8+ Skills • Strong Base</text>
+</g>
+
+<!-- CENTER -->
+<g>
+  <rect x="740" y="90" width="10" height="60" rx="5" fill="#3fffdc" class="bar"/>
+  <text x="765" y="90" class="label">Data Analysis</text>
+  <text x="765" y="112" class="value">20+ Datasets • Analyzed</text>
+
+  <rect x="740" y="170" width="10" height="60" rx="5" fill="#3fffdc" class="bar"/>
+  <text x="765" y="170" class="label">Advance Excel</text>
+  <text x="765" y="192" class="value">10+ Real-world Models • MIS Ready</text>
+
+  <rect x="740" y="250" width="10" height="60" rx="5" fill="#3fffdc" class="bar"/>
+  <text x="765" y="250" class="label">Power BI</text>
+  <text x="765" y="272" class="value">5+ Dashboards • Live</text>
+</g>
+
+<!-- RIGHT -->
+<g>
+  <rect x="1340" y="140" width="10" height="60" rx="5" fill="#ff5ce8" class="bar"/>
+  <text x="1365" y="140" class="label">Projects</text>
+  <text x="1365" y="162" class="value">35+ Projects</text>
+
+  <rect x="1340" y="230" width="10" height="60" rx="5" fill="#ff5ce8" class="bar"/>
+  <text x="1365" y="230" class="label">Impact</text>
+  <text x="1365" y="252" class="value">High Impact</text>
+</g>
+
+</svg>
+</section>
+<!-- ===============================
+ NEON SANKEY FLOW (TOP)
+================================ -->
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 style="color:#22d3ee;">Experience <i class="fas fa-briefcase"></i></h2>
+<div class="gridE">
+<div class="cardE">
+<h3>Data Analyst Intern <i class="fas fa-user-edit"></i></h3>
+<h4>Google | <span>2020 - 2022</span></h4><br>
+<p>Executed data analytics projects with cleaning, visualization, dashboards & reporting using Excel, Power Query, SQL, Power BI & Tableau, while creating web projects.</p><br>
+<h4 style="font-weight: 600; font-size: 1rem;">Responsibilities <i class="fas fa-tasks"></i></h4><br>
+<ul>
+<li>Completed end-to-end data analytics projects delivering business insights</li>
+<li>Performed data cleaning, transformation & visualization using Excel, Power Query & SQL</li>
+<li>Developed dashboards & automated reports in Power BI, Tableau & Access</li>
+<li>Designed web projects using HTML, CSS & JavaScript for portfolio development</li>
+<li>Enhanced storytelling, documentation & business presentation skills using Microsoft 365</li>
+</ul>
+</div>
+<div class="cardE">
+<h3>Web Developer Intern <i class="fas fa-code"></i></h3>
+<h4>Rajeev Dataverse | <span>2026 - Present</span></h4><br>
+<p>Founder of a self-initiated learning platform on Data Analytics, Automation & BI. I create and share content while building and engaging a community of learners.</p><br>
+<h4 style="font-weight: 600; font-size: 1rem;">Responsibilities <i class="fas fa-tasks"></i></h4><br>
+<ul>
+<li>Completed end-to-end data analytics projects delivering business insights</li>
+<li>Performed data cleaning, transformation & visualization using Excel, Power Query & SQL</li>
+<li>Developed dashboards & automated reports in Power BI, Tableau & Access</li>
+<li>Designed web projects using HTML, CSS & JavaScript for portfolio development</li>
+<li>Enhanced storytelling, documentation & business presentation skills using Microsoft 365</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2 style="color:#22d3ee;">Education <i class="fas fa-user-graduate"></i></h2>
+<div class="gridS">
+<div class="cardS">
+<h3>Bachelor of Computer Applications <i class="fas fa-desktop"></i></h3>
+<h4>IIT Guwahati | <span>2020 - 2023</span></h4><br>
+<p>- Data Analytics Program<br>- Excel, SQL, Power BI Training<br>- Hands-on Projects</p><br>
+<p>Grade: First class distinction.</p>
+</div>
+<div class="cardS">
+<h3>Master of Computer Applications <i class="fas fa-laptop-code"></i></h3>
+<h4>IIT Madras | <span>2023 - 2025</span></h4><br>
+<p>- Programming & Web Development<br>- Python & Machine Learning<br>- Academic Projects</p><br>
+<p>Grade: First class distinction.</p>
+</div>
+<div class="cardS">
+<h3>Senior Secondary Education - XII <i class="fas fa-book-open"></i></h3>
+<h4>St. Thomas’ International Academy | <span>2014 - 2016</span></h4><br>
+<p>- Physics<br>- Chemistry<br>- Maths</p><br>
+<p>Grade: First class distinction.</p>
+</div>
+<div class="cardS">
+<h3>Secondary Education - X  <i class="fas fa-book-open"></i></h3>
+<h4>St. Francis Xavier Academy | <span>2012 - 2014</span></h4><br>
+<p>- Science<br>- General Studies<br>- Commerce</p><br>
+<p>Grade: First class distinction.</p>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2 style="color:#22d3ee;">Projects <i class="fas fa-folder-open"></i></h2>
+<div class="grid">
+<div class="card project"><img src="images/Smartbite.gif" alt="Certificate"><h3 class="cert-title">Blinkit Grocery Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Motorola.gif" alt="Certificate"><h3 class="cert-title">Motorola Sales Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Presenation.gif" alt="Certificate"><h3 class="cert-title">Executive Business Presentation Vault</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Nescafe.gif" alt="Certificate"><h3 class="cert-title">Nescafe Driving Coffee Sales Excellence</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/HSBC.gif" alt="Certificate"><h3 class="cert-title">HSBC Strategic Stakeholder Intelligence</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Hospital.gif" alt="Certificate"><h3 class="cert-title">Hospital Emergency Room Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Data Cleaning.gif" alt="Certificate"><h3 class="cert-title">Power Query Messy Rows Cleaning</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Netflix.gif" alt="Certificate"><h3 class="cert-title">NETFLIX Data SQL Analysis</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Blue.gif" alt="Certificate"><h3 class="cert-title">F1 Grand Finale Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+</div>
+</section>
+
+<!-- CERTIFICATION-->
+<section id="certification">
+<h2 style="color:#22d3ee">Certification <i class="fas fa-award"></i></h2>
+<div class="grid">
+<div class="card project"><img src="https://miro.medium.com/1*WnRXab-sreS-KePoZMYqKQ.jpeg" alt="Certificate"><h3 class="cert-title">Google Data Analysis</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+<div class="card project"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFXbkwFv_t1VA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698724527451?e=2147483647&v=beta&t=8dB8YVlvzI5o4rs5_xDoqwCgJ8twJa-_E55TxxzQaZc" alt="Certificate"><h3 class="cert-title">Power BI Data Analyst</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+<div class="card project"><img src="https://www.simplilearn.com/ice9/skillupcertificates/Introduction-to-Generative-AI-Studio.jpg" alt="Certificate"><h3 class="cert-title">Introduction to Generative AI Studio</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+<div class="card project"><img src="https://miro.medium.com/1*o308qe3XWZNePCd4VQWYCA.jpeg" alt="Certificate"><h3 class="cert-title">Hackerrank SQL Basic Certification</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+<div class="card project"><img src="https://imgv2-2-f.scribdassets.com/img/document/924090749/original/d47f0b1c02/1?v=1" alt="Certificate"><h3 class="cert-title">Canva Essentials Certification</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+<div class="card project"><img src="https://blog.jakelee.co.uk/assets/images/banners/github-certification.png" alt="Certificate"><h3 class="cert-title">GitHub Foundation Certification</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 style="color:#22d3ee;">Contact Me <i class="fas fa-user-tie"></i></h2>
+<div class="contact-icons">
+ <a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+ <a href="https://github.com/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="View My GitHub Projects"><i class="fab fa-github"></i></a>
+ <a href="mailto:rajeevtiwari8055@gmail.com?subject=Hi%20Rajeev&body=I%20visited%20your%20website%20and%20wanted%20to%20connect%20with%20you!" rel="noopener noreferrer" title="Send Me an Email"><i class="fa-solid fa-envelope"></i></a>
+ <a href="tel:+918102691328" rel="noopener noreferrer" title="Call Me Directly"><i class="fa-solid fa-phone"></i></a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-links">
+      <strong>Quick Links <i class="fas fa-link"></i></strong>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#certification">Certifications</a>
+
+      <div class="policy-links">
+        <strong class="footer-heading">Legal <i class="fas fa-gavel"></i></strong>
+         <a href="terms.html" target="_blank">Terms & Conditions</a>
+         <a href="privacy.html" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+<div class="footer-divider"></div>
+<div class="footer-bottom">
+  <span>© <span id="year"></span> <span style="color: #22d3ee;"> Priya's</span> website | All rights reserved</span>
+  <span>Features of This <a href="about.html" target="_blank" class="dev-link"> Website <i class="fas fa-globe"></i></a></span>
+  <span>Designed & Developed by<a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" class="dev-link"> Rajeev Dataverse <i class="fab fa-linkedin-in"></i></a></span>
+</div>
+</footer>
+
+<!-- TYPING EFFECT JS -->
+<script>
+const typeText = (el, words, speed=100) => {
+ let i=0,j=0,del=false;
+ setInterval(()=>{
+  el.textContent = words[i].substring(0,j);
+  if(!del && j++ === words[i].length){del=true}
+  if(del && j-- === 0){del=false;i=(i+1)%words.length}
+ },speed);
+}
+
+typeText(document.getElementById("type-name"),["I'm Priya"]);
+typeText(document.getElementById("type-skill"),
+ ["Excel | SQL | Power BI | Power Query | Python"]);
+</script>
+
+<script>
+// About me Typing
+document.addEventListener("DOMContentLoaded", function() {
+  const aboutTextElements = document.querySelectorAll('.dynamic-text');
+
+  const aboutTexts = [
+    "About Me"
+  ];
+
+  aboutTextElements.forEach(el => {
+    let aboutIndex = 0;
+    let charIndex = 0;
+
+    function typeAbout() {
+      el.textContent = aboutTexts[aboutIndex].substring(0, charIndex);
+
+      if (charIndex < aboutTexts[aboutIndex].length) {
+        charIndex++;
+        setTimeout(typeAbout, 100);
+      } else {
+        setTimeout(deleteAbout, 2000);
+      }
+    }
+
+    function deleteAbout() {
+      el.textContent = aboutTexts[aboutIndex].substring(0, charIndex);
+
+      if (charIndex > 0) {
+        charIndex--;
+        setTimeout(deleteAbout, 50);
+      } else {
+        aboutIndex = (aboutIndex + 1) % aboutTexts.length;
+        setTimeout(typeAbout, 500);
+      }
+    }
+
+    typeAbout(); // start typing for this span
+  });
+});
+</script>
+
+<script>
+  // Date & Time (Home)
+  function updateDateTime() {
+    const now = new Date();
+
+    const dateOptions = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    };
+
+    const dateString = now.toLocaleDateString("en-US", dateOptions);
+
+    const timeString = now.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      hour12: true
+    });
+
+    document.getElementById("current-date").innerText = dateString;
+    document.getElementById("current-time").innerText = timeString;
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+</script>
+
+<script>
+// Hamburger menu
+function toggleMenu() {
+  const navUl = document.querySelector('nav ul');
+  navUl.classList.toggle('show');
+}
+</script>
+
+<script>
+  // Force page to start from top (Home)
+  window.onload = function () {
+    if (window.location.hash) {
+      window.location.hash = "";
+      window.scrollTo(0, 0);
+    }
+  };
+</script>
+
+</body>
+</html>
