@@ -51,7 +51,8 @@ ul{font-size: 15px;}
   nav ul {display: none;flex-direction: column;gap: 0;background:#a78bfa;position: absolute;top: 70px;right: 0;width: 200px;border-radius: 10px;overflow: hidden;}
   nav ul li {margin: 0;border-bottom: 1px solid rgba(255,255,255,0.2);}
   nav ul li a {padding: 12px 20px;display: block;color: #000;}
-  .hamburger {display: block;}}
+  .hamburger {display: block;}
+   nav ul.show {display: flex;}}
 
 /* Date-Time-Status display */
 .rt-date-time {position: absolute;top: 95px;right: 20px;text-align: right;font-family: "Poppins", "Segoe UI", Arial, sans-serif;color:black;z-index: 10;background: transparent;}
@@ -142,15 +143,8 @@ ul{font-size: 15px;}
 @keyframes float{0%{bottom:-10px}100%{bottom:110%}}
 
 /* RESPONSIVE FIX – MOBILE VIEW */
-@media (max-width: 900px) {
-  section{padding:70px 6%;}
-  h2{font-size:28px;margin-bottom:40px;}
-  .about{grid-template-columns:1fr;gap:30px;}
-  .grid,.gridS,.gridE{grid-template-columns:1fr;gap:24px;}
-  .footer-bottom{flex-direction:column;gap:12px;}}
-
-/*@keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}}
-@media(max-width:900px){.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.navbar ul{display:none}} */
+@keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.navbar ul{display:none}} 
 </style>
 </head>
 <body>
