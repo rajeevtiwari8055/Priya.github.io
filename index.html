@@ -49,11 +49,11 @@ ul{font-size: 15px;}
 
 /* Mobile Menu */
 @media(max-width:900px){
-  nav ul {display: none;flex-direction: column;gap: 0;background:#a78bfa;position: absolute;top: 70px;right: 0;width: 200px;border-radius: 10px;overflow: hidden;}
-  nav ul li {margin: 0;border-bottom: 1px solid rgba(255,255,255,0.2);}
-  nav ul li a {padding: 12px 20px;display: block;color: #000;}
-  .hamburger {display: block;}
-   nav ul.show {display: flex;}}
+  nav ul {display:none;flex-direction:column;gap:0;background:#050814;position:absolute;top:70px;right:0;width:150px;border-radius: 10px;overflow: hidden;}
+  nav ul li {margin:0;border-bottom:1px solid rgba(255,255,255,0.2);}
+  nav ul li a {padding:8px 14px;display:block;color:#000;}
+  .hamburger {display:block;}
+  nav ul.show {display:flex;}}
 
 /* Date-Time-Status display */
 .rt-date-time {position: absolute;top: 95px;right: 20px;text-align: right;font-family: "Poppins", "Segoe UI", Arial, sans-serif;color:black;z-index: 10;background: transparent;}
@@ -114,8 +114,8 @@ ul{font-size: 15px;}
 .card:hover .cert-title{color:#a78bfa;}
 
 /* CONTACT */
-.contact-icons{display:flex;justify-content:center;gap:20px;font-size:30px;}
-.contact-icons a{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--mix1);text-decoration:none;transition:.4s;position:relative;overflow:hidden}
+.contact-icons{display:flex;justify-content:center;gap:20px;font-size:20px;}
+.contact-icons a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--mix1);text-decoration:none;transition:.4s;position:relative;overflow:hidden}
 .contact-icons a::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--mix1),var(--mix2));opacity:0;transition:.4s}
 .contact-icons a:hover::after{opacity:.25}
 .contact-icons a:hover{transform:translateY(-6px) rotate(-5deg);}
@@ -192,7 +192,7 @@ ul{font-size: 15px;}
 <section id="about">
  <h2 class="section-title" style="color:#a78bfa;"><span class="dynamic-text"></span></h2>
   <div class="about">
-    <img src="https://pbs.twimg.com/media/FM8NxEJVIAE2lzX.jpg">
+    <img src="images/newgirl.png">
     <div class="about-content">
       <p>My resume reflects my learning journey in Data Analysis, and I continue to strengthen my data skills through hands-on practice and real-world projects. I am a passionate Data Analyst with practical experience in Excel, SQL, Power BI, Python, and automation, focusing on transforming raw data into actionable business insights and building effective reporting dashboards for data-driven decision-making.</p>
       <p>Over time, I have worked on multiple analytics projects involving data cleaning, visualization, and predictive modeling. This portfolio highlights my skills, certifications, and real-world projects, allowing you to explore my work, understand my learning outcomes, analytical approach, and practical problem-solving abilities.</p>
@@ -215,6 +215,7 @@ ul{font-size: 15px;}
 <!-- SKILLS -->
 <section id="skills">
 <h2 class="section-title">Skills <i class="fas fa-layer-group"></i></h2>
+<p style="text-align:center;">These are some of the skills I've been learning & gradually improving through practice and real-world applications.</p><br>
 <div class="gridS">
 <div class="cardS">
 <div class="skill"><span>Excel <b>90%</b></span><div class="progress"><div style="width:90%"></div></div></div>
@@ -275,7 +276,6 @@ ul{font-size: 15px;}
 </marquee>
 
 <svg viewBox="0 0 1500 420" xmlns="http://www.w3.org/2000/svg">
-
 <!-- ===== DEFINITIONS ===== -->
 <defs>
   <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -283,17 +283,14 @@ ul{font-size: 15px;}
     <stop offset="50%" stop-color="#6fa8ff"/>
     <stop offset="100%" stop-color="#3fffdc"/>
   </linearGradient>
-
   <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#3fffdc"/>
     <stop offset="100%" stop-color="#ffd166"/>
   </linearGradient>
-
   <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
     <stop offset="0%" stop-color="#ffd166"/>
     <stop offset="100%" stop-color="#ff5ce8"/>
   </linearGradient>
-
   <filter id="glow">
     <feGaussianBlur stdDeviation="5" result="blur"/>
     <feMerge>
@@ -302,51 +299,42 @@ ul{font-size: 15px;}
     </feMerge>
   </filter>
 </defs>
-
 <!-- FLOWS -->
 <g>
   <path d="M110 220 C 380 150, 520 120, 750 120" stroke="url(#g1)" class="flow"/>
   <path d="M110 220 C 380 220, 520 200, 750 200" stroke="url(#g1)" class="flow"/>
   <path d="M110 220 C 380 290, 520 290, 750 280" stroke="url(#g1)" class="flow"/>
-
   <path d="M760 120 C 980 150, 1150 170, 1350 160" stroke="url(#g2)" class="flow"/>
   <path d="M760 200 C 980 220, 1150 250, 1350 250" stroke="url(#g3)" class="flow"/>
   <path d="M760 280 C 980 260, 1150 210, 1350 190" stroke="url(#g2)" class="flow"/>
 </g>
-
 <!-- LEFT -->
 <g>
   <rect x="90" y="190" width="10" height="60" rx="5" fill="#b26cff" class="bar"/>
   <text x="115" y="190" class="label">Skill Foundation</text>
   <text x="115" y="212" class="value">8+ Skills • Strong Base</text>
 </g>
-
 <!-- CENTER -->
 <g>
   <rect x="740" y="90" width="10" height="60" rx="5" fill="#3fffdc" class="bar"/>
   <text x="765" y="90" class="label">Data Analysis</text>
   <text x="765" y="112" class="value">20+ Datasets • Analyzed</text>
-
   <rect x="740" y="170" width="10" height="60" rx="5" fill="#3fffdc" class="bar"/>
   <text x="765" y="170" class="label">Advance Excel</text>
   <text x="765" y="192" class="value">10+ Real-world Models • MIS Ready</text>
-
   <rect x="740" y="250" width="10" height="60" rx="5" fill="#3fffdc" class="bar"/>
   <text x="765" y="250" class="label">Power BI</text>
   <text x="765" y="272" class="value">5+ Dashboards • Live</text>
 </g>
-
 <!-- RIGHT -->
 <g>
   <rect x="1340" y="140" width="10" height="60" rx="5" fill="#ff5ce8" class="bar"/>
   <text x="1365" y="140" class="label">Projects</text>
   <text x="1365" y="162" class="value">35+ Projects</text>
-
   <rect x="1340" y="230" width="10" height="60" rx="5" fill="#ff5ce8" class="bar"/>
   <text x="1365" y="230" class="label">Impact</text>
   <text x="1365" y="252" class="value">High Impact</text>
 </g>
-
 </svg>
 </section>
 <!-- ===============================
@@ -356,6 +344,7 @@ ul{font-size: 15px;}
 <!-- EXPERIENCE -->
 <section id="experience">
 <h2 class="section-title">Experience <i class="fas fa-briefcase"></i></h2>
+<p style="text-align:center;">Hands-on experience in Data Analytics gained through personal projects, explore my work and practical experience.</p><br>
 <div class="gridE">
 <div class="cardE">
 <h3>Data Analyst Intern <i class="fas fa-user-edit"></i></h3>
@@ -389,6 +378,7 @@ ul{font-size: 15px;}
 <!-- EDUCATION -->
 <section id="education">
 <h2 class="section-title">Education <i class="fas fa-user-graduate"></i></h2>
+<p style="text-align:center;">I have completed my school education followed by undergraduate studies, & I'm continuously enhancing my skills & technical knowledge.</p><br>
 <div class="gridS">
 <div class="cardS">
 <h3>Bachelor of Computer Applications <i class="fas fa-desktop"></i></h3>
@@ -420,37 +410,79 @@ ul{font-size: 15px;}
 <!-- PROJECTS -->
 <section id="projects">
 <h2 class="section-title">Projects <i class="fas fa-folder-open"></i></h2>
+<p style="text-align:center;">Below are the sample Data Analytics projects on AI, Excel, Power Query, MIS, Access, SQL, Power BI, Tableau, Python & Web Development.</p><br>
 <div class="grid">
-<div class="card project"><img src="images/Smartbite.gif" alt="Certificate"><h3 class="cert-title">Blinkit Grocery Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Motorola.gif" alt="Certificate"><h3 class="cert-title">Motorola Sales Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Presenation.gif" alt="Certificate"><h3 class="cert-title">Executive Business Presentation Vault</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Nescafe.gif" alt="Certificate"><h3 class="cert-title">Nescafe Driving Coffee Sales Excellence</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/HSBC.gif" alt="Certificate"><h3 class="cert-title">HSBC Strategic Stakeholder Intelligence</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Hospital.gif" alt="Certificate"><h3 class="cert-title">Hospital Emergency Room Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Data Cleaning.gif" alt="Certificate"><h3 class="cert-title">Power Query Messy Rows Cleaning</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Netflix.gif" alt="Certificate"><h3 class="cert-title">NETFLIX Data SQL Analysis</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
-<div class="card project"><img src="images/Blue.gif" alt="Certificate"><h3 class="cert-title">F1 Grand Finale Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+<div class="card project"><img src="images/Smartbite.gif" alt="Certificate"><h3 class="cert-title">Blinkit Grocery Analysis Dashboard</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Motorola.gif" alt="Certificate"><h3 class="cert-title">Motorola Sales Analysis Dashboard</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Presenation.gif" alt="Certificate"><h3 class="cert-title">Executive Business Presentation Vault</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Nescafe.gif" alt="Certificate"><h3 class="cert-title">Nescafe Driving Coffee Sales Excellence</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/HSBC.gif" alt="Certificate"><h3 class="cert-title">HSBC Strategic Stakeholder Intelligence</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Hospital.gif" alt="Certificate"><h3 class="cert-title">Hospital Emergency Room Dashboard</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Data Cleaning.gif" alt="Certificate"><h3 class="cert-title">Power Query Messy Rows Cleaning</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Netflix.gif" alt="Certificate"><h3 class="cert-title">NETFLIX Data SQL Analysis</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
+
+<div class="card project"><img src="images/Blue.gif" alt="Certificate"><h3 class="cert-title">F1 Grand Finale Analysis Dashboard</h3>
+<a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
 </div>
 </section>
 
 <!-- CERTIFICATION-->
 <section id="certification">
 <h2 class="section-title">Certification <i class="fas fa-award"></i></h2>
+<p style="text-align:center;">Here are some of my professional Certification showcasing my skills and expertise. Education is the most powerful weapon in the world.</p><br>
 <div class="grid">
-<div class="card project"><img src="https://miro.medium.com/1*WnRXab-sreS-KePoZMYqKQ.jpeg" alt="Certificate"><h3 class="cert-title">Google Data Analysis</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
-<div class="card project"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFXbkwFv_t1VA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698724527451?e=2147483647&v=beta&t=8dB8YVlvzI5o4rs5_xDoqwCgJ8twJa-_E55TxxzQaZc" alt="Certificate"><h3 class="cert-title">Power BI Data Analyst</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
-<div class="card project"><img src="https://www.simplilearn.com/ice9/skillupcertificates/Introduction-to-Generative-AI-Studio.jpg" alt="Certificate"><h3 class="cert-title">Introduction to Generative AI Studio</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
-<div class="card project"><img src="https://miro.medium.com/1*o308qe3XWZNePCd4VQWYCA.jpeg" alt="Certificate"><h3 class="cert-title">Hackerrank SQL Basic Certification</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
-<div class="card project"><img src="https://imgv2-2-f.scribdassets.com/img/document/924090749/original/d47f0b1c02/1?v=1" alt="Certificate"><h3 class="cert-title">Canva Essentials Certification</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
-<div class="card project"><img src="https://blog.jakelee.co.uk/assets/images/banners/github-certification.png" alt="Certificate"><h3 class="cert-title">GitHub Foundation Certification</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+<div class="card project"><img src="https://miro.medium.com/1*WnRXab-sreS-KePoZMYqKQ.jpeg" alt="Certificate"><h3 class="cert-title">Google Data Analysis</h3>
+<a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+
+<div class="card project"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFXbkwFv_t1VA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698724527451?e=2147483647&v=beta&t=8dB8YVlvzI5o4rs5_xDoqwCgJ8twJa-_E55TxxzQaZc" alt="Certificate"><h3 class="cert-title">Power BI Data Analyst</h3>
+<a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+
+<div class="card project"><img src="https://www.simplilearn.com/ice9/skillupcertificates/Introduction-to-Generative-AI-Studio.jpg" alt="Certificate"><h3 class="cert-title">Introduction to Generative AI Studio</h3>
+<a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+
+<div class="card project"><img src="https://miro.medium.com/1*o308qe3XWZNePCd4VQWYCA.jpeg" alt="Certificate"><h3 class="cert-title">Hackerrank SQL Basic Certification</h3>
+<a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+
+<div class="card project"><img src="https://imgv2-2-f.scribdassets.com/img/document/924090749/original/d47f0b1c02/1?v=1" alt="Certificate"><h3 class="cert-title">Canva Essentials Certification</h3>
+<a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
+
+<div class="card project"><img src="https://blog.jakelee.co.uk/assets/images/banners/github-certification.png" alt="Certificate"><h3 class="cert-title">GitHub Foundation Certification</h3>
+<a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
 <h2 class="section-title">Contact Me <i class="fas fa-user-tie"></i></h2>
+<p style="text-align:center;">Feel free to connect with me directly using the icons below for professional networking, collaboration, and career opportunities.</p><br>
+<!-- LinkedIn Official Profile Badge Code (Centered) -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<div style="display: flex; justify-content: center; align-items: center;">
+ <div class="badge-base LI-profile-badge" 
+  data-locale="en_US" data-size="medium" 
+  data-theme="dark" data-type="HORIZONTAL" 
+  data-vanity="rajeevtiwari8055" data-version="v1">
+  <a class="badge-base__link LI-simple-link" 
+  href="https://in.linkedin.com/in/rajeevtiwari8055?trk=profile-badge"></a>
+ </div> 
+</div><br>
 <div class="contact-icons">
- <a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+ <a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
  <a href="https://github.com/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="View My GitHub Projects"><i class="fab fa-github"></i></a>
  <a href="mailto:rajeevtiwari8055@gmail.com?subject=Hi%20Rajeev&body=I%20visited%20your%20website%20and%20wanted%20to%20connect%20with%20you!" rel="noopener noreferrer" title="Send Me an Email"><i class="fa-solid fa-envelope"></i></a>
  <a href="tel:+918102691328" rel="noopener noreferrer" title="Call Me Directly"><i class="fa-solid fa-phone"></i></a>
@@ -484,6 +516,11 @@ ul{font-size: 15px;}
   <span>Designed & Developed by<a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" class="dev-link"> Rajeev Dataverse <i class="fab fa-linkedin-in"></i></a></span>
 </div>
 </footer>
+
+<script>
+// DYNAMIC YEAR
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 <!-- TYPING EFFECT JS -->
 <script>
