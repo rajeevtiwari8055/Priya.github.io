@@ -142,6 +142,92 @@ ul{font-size: 15px;}
 .floating-dots span:nth-child(4){left:80%;animation-delay:6s;}
 @keyframes float{0%{bottom:-10px}100%{bottom:110%}}
 
+/* ============================= */
+/* RESPONSIVE FIX – MOBILE VIEW */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+  section{
+    padding:70px 6%;
+  }
+
+  h2{
+    font-size:28px;
+    margin-bottom:40px;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    padding:12px 18px;
+  }
+
+  .navbar ul{
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    flex-direction:column;
+    background:rgba(5,8,20,0.95);
+    border-radius:16px;
+    display:none;
+  }
+
+  .navbar ul.show{
+    display:flex;
+  }
+
+  /* HERO */
+  .hero-content h1{
+    font-size:40px;
+  }
+
+  /* ABOUT */
+  .about{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .about img{
+    max-width:280px;
+    margin:auto;
+  }
+
+  /* ALL GRIDS – ONE CARD PER ROW */
+  .grid,
+  .gridS,
+  .gridE{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  /* PROJECT IMAGE */
+  .project img{
+    height:180px;
+  }
+
+  /* NEON SVG HIDE ON MOBILE */
+  #neon-flow-top svg{
+    display:none;
+  }
+
+  /* DATE TIME */
+  .rt-date-time{
+    display:none;
+  }
+
+  /* FOOTER */
+  .site-footer{
+    padding:30px 20px;
+    text-align:center;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:12px;
+  }
+}
+
 /*@keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}}
 @media(max-width:900px){.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.navbar ul{display:none}} */
 </style>
@@ -151,6 +237,7 @@ ul{font-size: 15px;}
 <!-- NAV -->
 <nav class="navbar">
 <strong style="color: #22d3ee;">Priya</strong>
+<i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
  <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About Me</a></li>
