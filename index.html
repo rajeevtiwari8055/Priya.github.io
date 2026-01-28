@@ -34,6 +34,7 @@ ul{font-size: 15px;}
 .hero-btns{display:flex;gap:18px}
 .btn{padding:12px 26px;border-radius:30px;background:linear-gradient(90deg,var(--mix1),var(--mix2));color:#000;font-weight:600;text-decoration:none;transition:.4s;position:relative;overflow:hidden;}
 .btn:hover{box-shadow:0 0 35px rgba(167,139,250,.6);transform:translateY(-2px)}
+@keyframes slideIn{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:none}}
 
 /* ABOUT FIX */
 .about{display:grid;grid-template-columns: 320px 1fr; gap:60px;align-items:flex-start;}
@@ -41,7 +42,6 @@ ul{font-size: 15px;}
 .about-content{display:flex;flex-direction:column;gap:16px;}
 .about-content ul{list-style:none;padding:0;margin-top:10px;}
 .about-content li{margin-bottom:8px;}
-@keyframes slideIn{from{opacity:0;transform:translateX(-120px)}to{opacity:1;transform:none}}
 
 /* Hamburger Icon */
 .hamburger {display:none;font-size:24px;color:#fff;cursor:pointer;}
@@ -143,8 +143,10 @@ ul{font-size: 15px;}
 @keyframes float{0%{bottom:-10px}100%{bottom:110%}}
 
 /* RESPONSIVE FIX – MOBILE VIEW */
-@keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}}
-@media(max-width:900px){.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.navbar ul{display:none}} 
+/* @keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}} 
+@media(max-width:900px){#about{flex-direction:column;}#about img{width:100%;}.hero-content h1{font-size:40px;}nav ul{display:none;}}*/
+@media(max-width:900px){.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.navbar ul{display:none}.grid,.gridS,.gridE{grid-template-columns:1fr;gap:24px;}.footer-bottom{flex-direction:column;gap:12px;}}
+
 </style>
 </head>
 <body>
@@ -179,7 +181,7 @@ ul{font-size: 15px;}
 <section class="hero" id="home">
  <div class="hero-content">
   <div id="type-name" style="font-size:40px;color:var(--mix1)"></div>
-  <h1>Data Analytics & <br>Business Intelligence</h1>
+  <h1>Data Analytics<br>& Business Intelligence</h1>
   <p id="type-skill"></p>
   <div class="hero-btns">
    <a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
