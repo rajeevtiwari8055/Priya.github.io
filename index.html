@@ -24,12 +24,11 @@ ul{font-size: 15px;}
 .navbar a:hover {background: linear-gradient(90deg, #22d3ee, #a78bfa);-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
 
 /* HERO */
-.hero{min-height:100vh;
- background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
- position:relative;display:flex;align-items:center;}
+.hero{min-height:100vh;background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80') 
+ center/cover no-repeat;position:relative;display:flex;align-items:center;}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,20,0.92),rgba(5,8,20,0.6),rgba(5,8,20,0.2));}
-.hero-content{position:relative;z-index:2;max-width:620px;animation:slideIn 1.4s ease forwards;}
-.hero-content h1{font-size:60px;background:linear-gradient(90deg,var(--mix1),var(--mix2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-content{position:relative;z-index:2;animation:slideIn 1.4s ease forwards;}
+.hero-content h1{font-size:55px;background:linear-gradient(90deg,var(--mix1),var(--mix2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .hero-content p{margin:26px 0;color:var(--text-muted)}
 .hero-btns{display:flex;gap:18px}
 .btn{padding:12px 26px;border-radius:30px;background:linear-gradient(90deg,var(--mix1),var(--mix2));color:#000;font-weight:600;text-decoration:none;transition:.4s;position:relative;overflow:hidden;}
@@ -42,6 +41,8 @@ ul{font-size: 15px;}
 .about-content{display:flex;flex-direction:column;gap:16px;}
 .about-content ul{list-style:none;padding:0;margin-top:10px;}
 .about-content li{margin-bottom:8px;}
+.section-title{color:#22d3ee;text-align:center;position:relative;}
+.section-title::after{content:"";display:block;width:120px;height:3px;background:linear-gradient(90deg,#22d3ee,#a78bfa);border-radius:10px;margin:10px auto 0;}
 
 /* Hamburger Icon */
 .hamburger {display:none;font-size:24px;color:#fff;cursor:pointer;}
@@ -192,7 +193,7 @@ ul{font-size: 15px;}
 
 <!-- ABOUT ME -->
 <section id="about">
- <h2 style="color:#a78bfa;"><span class="dynamic-text"></span></h2>
+ <h2 class="section-title" style="color:#a78bfa;"><span class="dynamic-text"></span></h2>
   <div class="about">
     <img src="https://pbs.twimg.com/media/FM8NxEJVIAE2lzX.jpg">
     <div class="about-content">
@@ -215,7 +216,7 @@ ul{font-size: 15px;}
 
 <!-- SKILLS -->
 <section id="skills">
-<h2 style="color:#22d3ee">Skills <i class="fas fa-layer-group"></i></h2>
+<h2 class="section-title">Skills <i class="fas fa-layer-group"></i></h2>
 <div class="gridS">
 <div class="cardS">
 <div class="skill"><span>Excel <b>90%</b></span><div class="progress"><div style="width:90%"></div></div></div>
@@ -356,7 +357,7 @@ ul{font-size: 15px;}
 
 <!-- EXPERIENCE -->
 <section id="experience">
-<h2 style="color:#22d3ee;">Experience <i class="fas fa-briefcase"></i></h2>
+<h2 class="section-title">Experience <i class="fas fa-briefcase"></i></h2>
 <div class="gridE">
 <div class="cardE">
 <h3>Data Analyst Intern <i class="fas fa-user-edit"></i></h3>
@@ -389,7 +390,7 @@ ul{font-size: 15px;}
 
 <!-- EDUCATION -->
 <section id="education">
-<h2 style="color:#22d3ee;">Education <i class="fas fa-user-graduate"></i></h2>
+<h2 class="section-title">Education <i class="fas fa-user-graduate"></i></h2>
 <div class="gridS">
 <div class="cardS">
 <h3>Bachelor of Computer Applications <i class="fas fa-desktop"></i></h3>
@@ -420,7 +421,7 @@ ul{font-size: 15px;}
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2 style="color:#22d3ee;">Projects <i class="fas fa-folder-open"></i></h2>
+<h2 class="section-title">Projects <i class="fas fa-folder-open"></i></h2>
 <div class="grid">
 <div class="card project"><img src="images/Smartbite.gif" alt="Certificate"><h3 class="cert-title">Blinkit Grocery Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
 <div class="card project"><img src="images/Motorola.gif" alt="Certificate"><h3 class="cert-title">Motorola Sales Analysis Dashboard</h3><a href="https://github.com/rajeevtiwari8055/SQL-Project-on-Online-Book-store" class="btn" target="_blank">View Repository↗</a></div>
@@ -436,7 +437,7 @@ ul{font-size: 15px;}
 
 <!-- CERTIFICATION-->
 <section id="certification">
-<h2 style="color:#22d3ee">Certification <i class="fas fa-award"></i></h2>
+<h2 class="section-title">Certification <i class="fas fa-award"></i></h2>
 <div class="grid">
 <div class="card project"><img src="https://miro.medium.com/1*WnRXab-sreS-KePoZMYqKQ.jpeg" alt="Certificate"><h3 class="cert-title">Google Data Analysis</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
 <div class="card project"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFXbkwFv_t1VA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698724527451?e=2147483647&v=beta&t=8dB8YVlvzI5o4rs5_xDoqwCgJ8twJa-_E55TxxzQaZc" alt="Certificate"><h3 class="cert-title">Power BI Data Analyst</h3><a href="https://www.linkedin.com/learning/certificates/369c5ca223fd3891cc3766d616d016e2312106e6aba79e4f3a52ac63a3de4b80" class="btn" target="_blank">Show Credential↗</a></div>
@@ -449,7 +450,7 @@ ul{font-size: 15px;}
 
 <!-- CONTACT -->
 <section id="contact">
-<h2 style="color:#22d3ee;">Contact Me <i class="fas fa-user-tie"></i></h2>
+<h2 class="section-title">Contact Me <i class="fas fa-user-tie"></i></h2>
 <div class="contact-icons">
  <a href="https://www.linkedin.com/in/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
  <a href="https://github.com/rajeevtiwari8055" target="_blank" rel="noopener noreferrer" title="View My GitHub Projects"><i class="fab fa-github"></i></a>
