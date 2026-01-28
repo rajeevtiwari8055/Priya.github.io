@@ -142,22 +142,13 @@ ul{font-size: 15px;}
 .floating-dots span:nth-child(4){left:80%;animation-delay:6s;}
 @keyframes float{0%{bottom:-10px}100%{bottom:110%}}
 
-/* ============================= */
 /* RESPONSIVE FIX – MOBILE VIEW */
-/* ============================= */
-
 @media (max-width: 900px) {
   section{padding:70px 6%;}
   h2{font-size:28px;margin-bottom:40px;}
-  .navbar{padding:12px 18px;}
-  .navbar ul{position:absolute;top:70px;right:0;width:100%;flex-direction:column;background:transparent;border-radius:16px;display:none;}
   .navbar ul.show{display:flex;}
-  .hero-content h1{font-size:40px;}
   .about{grid-template-columns:1fr;gap:30px;}
-  .about img{max-width:280px;margin:auto;}
   .grid,.gridS,.gridE{grid-template-columns:1fr;gap:24px;}
-  .project img{height:180px;}
-  #neon-flow-top svg{display:none;}
   .footer-bottom{flex-direction:column;gap:12px;}}
 
 /*@keyframes float{from{transform:translateY(0);opacity:0}to{transform:translateY(-120px);opacity:1}}
