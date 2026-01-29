@@ -316,7 +316,7 @@ Built for professionals who want to **stand out, not blend in**.
 
 ## 🖼️ Project Visuals
 
-![Project Preview](images/priya%20Code.png)  
+![Project Preview](images/Priya%20Code.png)  
 ![Project Overview](images/landscapegirl.png) 
 ![Final UI Impression](images/Priya.png) 
 
